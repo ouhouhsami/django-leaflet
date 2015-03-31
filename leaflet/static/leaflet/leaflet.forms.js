@@ -206,6 +206,11 @@ L.GeometryField = L.Class.extend({
     },
 
     _controlDrawOptions: function () {
+        var toolbar = L.drawLocal.draw.toolbar
+        toolbar.finish = {
+                title: 'Finish drawing',
+                text: 'Finish'
+        }
         return {
             edit: {
                 featureGroup: this.drawnItems
@@ -216,6 +221,7 @@ L.GeometryField = L.Class.extend({
                 circle: false, // Turns off this drawing tool
                 rectangle: this.options.is_polygon,
                 marker: this.options.is_point,
+                toolbar: toolbar
             }
         };
     }
